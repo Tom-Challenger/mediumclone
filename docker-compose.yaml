@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    container_name: db-service
+    image: postgres:9.6
+    environment:
+      POSTGRES_DB: mediumclone
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+    restart: always
+    ports:
+      - 5432:5432
+    working_dir: /docker-entrypoint-initdb.d
+    volumes:
+      - ./docker/postgres/:/docker-entrypoint-initdb.d/
+
+  adminer:
+    container_name: adminer-service
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080

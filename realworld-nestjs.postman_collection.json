@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "13da44fe-961d-41e5-a05f-e29cfe7a9397",
+		"name": "realworld-nestjs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ReadTags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tags",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user\":{\n    \"username\": \"baz\",\n    \"email\": \"baz@gmail.com\",\n    \"password\": \"123\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user With Error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user\":{\n    \"username\": \"baz\",\n    \"email\": \"baz@gmail.com\",\n    \"password\": \"123\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"bar@gmail.com\",\n        \"password\": \"123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user wit Error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"foo@gmail.com\",\n        \"password\": \"1234\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCurrentUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"equals": true
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"bio\": \"I like to skatebourd too\",\n        \"image\": \"http://\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateArticle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"article\": {\n    \"title\": \"How to train your dragon2\",\n    \"description\": \"Ever wonder how?\",\n    \"body\": \"You have to believe\",\n    \"tagList\": [\"reactjs\", \"angularjs\", \"dragons\"]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateArticleWithError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"article\": {\n    \"title\": \"How to train your dragon2\",\n    \"description\": \"Ever wonder how?\",\n    \"tagList\": [\"reactjs\", \"angularjs\", \"dragons\"]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateArticleByBar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiYXIiLCJlbWFpbCI6ImJhckBnbWFpbC5jb20iLCJpYXQiOjE2MzAzOTc5ODF9.cAtOj0Wvh3CksWoS8bYJ7PbYASq7pPr6r420b04VSQc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"article\": {\n    \"title\": \"How to train your dragon bar\",\n    \"description\": \"Ever wonder how?\",\n    \"body\": \"You have to believe\",\n    \"tagList\": [\"reactjs\", \"angularjs\", \"dragons\"]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadArticle",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles/how-to-train-your-dragon-gpd12s",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"how-to-train-your-dragon-gpd12s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteArticle",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles/how-to-train-your-dragon-gpd12s22",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"how-to-train-your-dragon-gpd12s22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateArticle",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"article\": {\n    \"description\": \"Ever wonder how? NOW2\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles/how-to-train-your-dragon.-upd2-aa3353",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"how-to-train-your-dragon.-upd2-aa3353"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles?favorites=Jacob",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Jacob",
+							"disabled": true
+						},
+						{
+							"key": "tag",
+							"value": "dragon",
+							"disabled": true
+						},
+						{
+							"key": "favorites",
+							"value": "Jacob"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddFavoriteToArticle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles/how-to-train-your-dragon2-mozbh2/favorite",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"how-to-train-your-dragon2-mozbh2",
+						"favorite"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Jacob",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeFavoriteToArticle",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles/how-to-train-your-dragon2-mozbh2/favorite",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"how-to-train-your-dragon2-mozbh2",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/profiles/bar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"bar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FollowProfileByFoo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BnbWFpbC5jb20iLCJpYXQiOjE2MzAzOTc4NzZ9.vITL0e08PHP2uq5XpcxCi0SdGtcPb0Lol76hPnMxaiY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/profiles/bar/follow",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"bar",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnFollowProfileByFoo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJKYWNvYiIsImVtYWlsIjoiamFrZUBqYWtlLmpha2UiLCJpYXQiOjE2Mjk4MTIyNDJ9.u8n7esqW4i1hHVU8KHyJ5a-tf7SwqfYmgUHy_VfrYaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/profiles/bar/follow",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles",
+						"bar",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentFeedByFoo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BnbWFpbC5jb20iLCJpYXQiOjE2MzAzOTc4NzZ9.vITL0e08PHP2uq5XpcxCi0SdGtcPb0Lol76hPnMxaiY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/articles/feed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"feed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
